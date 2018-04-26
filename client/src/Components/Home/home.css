@@ -1,0 +1,73 @@
+.explore-container {
+    width: 80%;
+    height: 200px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column;
+    margin: auto;
+}
+
+.explore-pictures-container {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.explore-condo-container {
+    width: 21%;
+    height: 100%;
+    background-color: lawngreen;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    -webkit-box-shadow: 10px 10px 24px -15px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 24px -15px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 24px -15px rgba(0,0,0,0.75);
+    transition: all 0.25s;
+    cursor: pointer;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    color: #484848;
+}
+
+.explore-container-dummy {
+    width: 21%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.explore-condo-pic {
+    width: 40%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1484061263732-b8b0a5ae7db6?auto=format&fit=crop&w=1050&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.explore-cabin-pic {
+    width: 40%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1481934633871-fc3e3ba6f0e0?auto=format&fit=crop&w=1050&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.explore-timeshare-pic {
+    width: 40%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1506126279646-a697353d3166?auto=format&fit=crop&w=1050&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.explore-title {
+    width: 60%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,145 @@
+.gray-dividing-line {
+    width: 100%;
+    height: 1px;
+    background-color: #D3D3D3;
+}
+
+.first-footer-container {
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.inner-footer-container {
+    width: 80%;
+    height: 85%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    border-bottom: 1px solid #D3D3D3;
+}
+
+.first-footer-div {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column;
+}
+
+.footer-select-1 {
+    width: 100%;
+    height: 15%;
+    color: #484848;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+    border-color: #D3D3D3;
+    margin-top: 7.5%;
+}
+
+.footer-select-2 {
+    width: 100%;
+    height: 15%;
+    color: #484848;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+    border-color: #D3D3D3;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: column;
+}
+
+.second-footer-div {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column;
+}
+
+.second-footer-header {
+    height: auto;
+    width: 100%;
+    color: #484848;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    margin-top: 15%;
+    font-style: bold;
+}
+
+.second-footer-body {
+    height: auto;
+    width: 100%;
+    color: gray;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    margin-top: 15%;
+    font-style: bold;
+}
+
+.skinny-footer-container {
+    width: 80%;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skinny-footer-left-div {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: gray;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.skinny-footer-right-div {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: gray;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.little-logo {
+    background-image: url('https://d3ui957tjb5bqd.cloudfront.net/uploads/2015/09/airbnb-2.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 20%;
+    height: 100%;
+}
+
+.facebook-logo {
+    background-image: url('https://i1.wp.com/www.ccmcinc.com/wp-content/uploads/2016/09/fb-gray.png?fit=500%2C500&ssl=1');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 10%;
+    height: 35%;
+}
+
+.twitter-logo {
+    background-image: url('http://nizine.net/images/twitter.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 10%;
+    height: 35%;
+}
+
+.hover-underline:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

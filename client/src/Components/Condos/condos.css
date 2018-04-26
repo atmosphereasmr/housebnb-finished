@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+.featured-condos-title {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    color: #484848;
+}
+
+.featured-condos-container {
+    width: 80%;
+    height: 600px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.featured-condo-first {
+    width: 20%;
+    height: 300px;
+}
+
+.featured-condo {
+    width: 21%;
+    height: 300px;
+}
+
+.featured-condo a{
+  text-decoration: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.featured-condo-pic {
+    width: 100%;
+    height: 50%;
+    background-position: center;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.featured-cabin-pic {
+    width: 100%;
+    height: 50%;
+    background-image: url('https://images.unsplash.com/photo-1414497370617-1d23dd92ab2d?auto=format&fit=crop&w=967&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.featured-timeshare-pic {
+    width: 100%;
+    height: 50%;
+    background-image: url('https://images.unsplash.com/photo-1504042502815-3d3544395216?auto=format&fit=crop&w=1050&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.featured-condo-rooms-font {
+    position: relative;
+    bottom: 4%;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-style: bold;
+    color: #990000;
+    margin: 0px;
+}
+
+.featured-condo-name-font {
+    position: relative;
+    bottom: 10%;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+    color: #484848;
+    cursor: pointer;
+    margin: 0px;
+}
+
+.featured-condo-price-font {
+    position: relative;
+    bottom: 15%;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    color: #128700;
+    margin: 8px 0px;
+}
+
+.ratings-container {
+    width: 100%;
+    height: 5%;
+    position: relative;
+    bottom: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    color: #484848;
+}
+
+.stars-container {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.star-color {
+    color: teal;
+}
+
+.show-all-container {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    position: relative;
+    bottom: 20%;
+    color: teal;
+    font-family: 'Roboto Condensed', sans-serif;
+}
