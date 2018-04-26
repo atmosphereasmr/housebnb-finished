@@ -25,7 +25,7 @@ export default class Create extends Component {
     }
 
     submit() {
-        axios.post(__dirname + '/api/add', {withCredentials: true}, this.state)
+        axios.post('/api/add', {withCredentials: true}, this.state)
     }
 
     render() {

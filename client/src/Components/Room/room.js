@@ -21,7 +21,7 @@ export default class Room extends Component {
     }
 
     componentDidMount() {
-      axios.get(__dirname + `/api/property/${this.props.match.params.id}`, { withCredentials: true })
+      axios.get(`/api/property/${this.props.match.params.id}`, { withCredentials: true })
       .then(res => {
         this.setState({
           property: res.data,

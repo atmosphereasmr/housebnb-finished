@@ -30,7 +30,7 @@ export default class Login extends Component {
     }
 
     register() {
-      axios.get(__dirname + `/api/auth/login/${this.state.userData.username}/${this.state.userData.password}`, {
+      axios.get(`/api/auth/login/${this.state.userData.username}/${this.state.userData.password}`, {
          withCredentials: true
        }).then( res => {
          console.log('res', res.data.user_id);

@@ -13,12 +13,12 @@ export default class Host extends Component {
   }
 
   componentDidMount(){
-    axios.get(__dirname + `/api/user/${this.props.match.params.id}`, { withCredentials: true })
+    axios.get(`/api/user/${this.props.match.params.id}`, { withCredentials: true })
       .then((res) => {
         this.setState({
           userInfo: res.data[0]
         })
-        axios.get(__dirname + `/api/user/homes/${this.props.match.params.id}`, { withCredentials: true })
+        axios.get(`/api/user/homes/${this.props.match.params.id}`, { withCredentials: true })
          .then((res) => {
            this.setState({
              userProperties: res.data

@@ -19,7 +19,7 @@ export default class Condos extends Component {
     }
 
     componentDidMount() {
-        axios.get(__dirname + '/api/home', {
+        axios.get('/api/home', {
           withCredentials: true}
         )
             .then(res => {

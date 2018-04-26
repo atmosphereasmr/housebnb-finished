@@ -33,8 +33,8 @@ export default class Register extends Component {
 
 
     register() {
-        axios.post(__dirname + '/api/auth/register', this.state.userData).then(res => {
-          axios.get(__dirname + `/api/auth/login/${this.state.userData.username}/${this.state.userData.password}`, {
+        axios.post('/api/auth/register', this.state.userData).then(res => {
+          axios.get(`/api/auth/login/${this.state.userData.username}/${this.state.userData.password}`, {
              withCredentials: true
            }).then( res => {
              console.log('res', res.data.user_id);
