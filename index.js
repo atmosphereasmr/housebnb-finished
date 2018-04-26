@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 //   origin: 'http://localhost:3000',
 //   credentials: true
 // }));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.use(
   session({
