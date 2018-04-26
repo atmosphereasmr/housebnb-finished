@@ -67,7 +67,7 @@ export default class Room extends Component {
 
 
      bookProperty() {
-      axios.put(`http://localhost:3001/api/property/book/${this.props.match.params.id}`, { withCredentials: true })
+      axios.put(`/api/property/book/${this.props.match.params.id}`, { withCredentials: true })
       .then(res => {
         this.setState({
           property: res.data,
