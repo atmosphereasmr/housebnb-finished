@@ -9,13 +9,13 @@ const isLoggedIn = require('./middlewares/isLoggedIn');
 require('dotenv').config();
 
 const app = express();
+app.use(express.static(__dirname + '/client/build'));
 app.use(bodyParser.json());
 
 // app.use(cors({
 //   origin: 'http://localhost:3000',
 //   credentials: true
 // }));
-app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.use(
   session({
