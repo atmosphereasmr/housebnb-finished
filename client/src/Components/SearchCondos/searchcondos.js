@@ -28,7 +28,7 @@ class SearchCondos extends Component {
     componentDidMount() {
         console.log(333, this.props.match.params)
 
-        axios.get(`/api/properties/${this.props.match.params.query}`)
+        axios.get(`/api/properties/${this.props.match.params.query}`, {widthCredentials: true})
             .then(res => {
                 this.setState({
                     searchResults: res.data,
