@@ -6,13 +6,12 @@ module.exports = {
     const dbInstance = req.app.get('db');
     const { query } = req.params;
 
-    dbInstance.properties.get_properties_search({ query })
+    dbInstance.properties.get_properties_search([ query + '%'])
       .then(response => res.status(200).send(response))
       .catch(error => console.log(error))
   },
-  
+
   //Get Home page
-  //  api/homes/propertyId
   getPropertyHome: (req, res, next) => {
     const dbInstance = req.app.get('db');
 

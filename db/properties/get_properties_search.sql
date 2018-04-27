@@ -1,2 +1,2 @@
 SELECT * FROM properties
-WHERE city LIKE ${query};
+WHERE city LIKE $1;
