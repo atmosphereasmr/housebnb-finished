@@ -4,9 +4,9 @@ module.exports = {
   //  api/homes?search=SEARCHTERM
   getPropertySearch: (req, res, next) => {
     const dbInstance = req.app.get('db');
-    const { query } = req.params;
+    const { search } = req.query;
 
-    dbInstance.properties.get_properties_search({ query })
+    dbInstance.properties.get_properties_search([ search + '%'])
       .then(response => res.status(200).send(response))
       .catch(error => console.log(error))
   },

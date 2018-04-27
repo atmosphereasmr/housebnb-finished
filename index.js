@@ -53,7 +53,7 @@ app.get('/api/user/homes/:userId', ctrlUsers.getUserHomes)
 app.put('/api/user/update/:userId', isLoggedIn, ctrlUsers.updateUser)
 
 app.get('/api/home', ctrlProperties.getPropertyHome)
-app.get('/api/properties/:query', ctrlProperties.getPropertySearch)
+app.get('/api/properties', ctrlProperties.getPropertySearch)
 app.get('/api/property/:propertyId', ctrlProperties.getProperty)
 app.post('/api/add', isLoggedIn, ctrlProperties.addProperty)
 app.put('/api/property/:propertyId/update', isLoggedIn, ctrlProperties.updateProperty)
