@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './header.css'
 import { Link } from 'react-router-dom'
 import { connect } from "react-redux";
-import { isTyped, complete, deleteThis } from '../../reducer'
+import { search } from '../../reducer'
 
 class Header extends Component {
 
@@ -138,4 +138,4 @@ function MapStateToProps(state) {
     )
 }
 
-export default connect(MapStateToProps, { isTyped, complete, deleteThis })(Header)
+export default connect(MapStateToProps, { search })(Header)
