@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import '../Header/header.css'
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom'
 import { search } from '../../reducer'
 import axios from 'axios'
 
@@ -23,9 +24,7 @@ class HomeMain extends Component {
                         <div className="header-search-container">
                             <div className="glass-icon" />
                             <input placeholder='Try "Salt Lake City"' onChange={(e) => this.setState({search_query: e.target.value})}></input>
-                            <a href={`/search-condos/${this.state.search_query}`} className="search-box">
-                                <p>Search</p>
-                            </a>
+                            <Link className="search-box" to={`/search-condos/${this.state.search_query}`} ></Link>
                         </div>
                     </div>
             </div>
