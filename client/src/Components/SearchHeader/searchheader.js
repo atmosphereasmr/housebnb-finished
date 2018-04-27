@@ -3,11 +3,6 @@ import './searchheader.css'
 
 export default class SearchHeader extends Component {
 
-    componentDidMount() {
-        const searchBar = document.getElementById('search-bar')
-        searchBar.className="condos-search-bar"
-    }
-    
     render() {
         return (
             <div className="search-container">

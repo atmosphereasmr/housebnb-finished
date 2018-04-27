@@ -1,10 +1,16 @@
 import React, {Component} from 'react'
 import '../Header/header.css'
+import { connect } from "react-redux";
+import { search } from '../../reducer'
+import axios from 'axios'
 
-export default class HomeMain extends Component {
+class HomeMain extends Component {
 
-    searchClick() {
-        window.location = __dirname + '/search-condos'
+    constructor(props) {
+        super(props)
+        this.state = {
+            search_query: ""
+        }
     }
 
     render() {
@@ -16,13 +22,19 @@ export default class HomeMain extends Component {
                         <h1 className="housebnb-text-3">all over the world.</h1>
                         <div className="header-search-container">
                             <div className="glass-icon" />
-                            <input placeholder='Try "Salt Lake City"'></input>
-                            <div className="search-box" onClick={() => this.searchClick()}>
+                            <input placeholder='Try "Salt Lake City"' onChange={(e) => this.setState({search_query: e.target.value})}></input>
+                            <a href={`/search-condos/${this.state.search_query}`} className="search-box">
                                 <p>Search</p>
-                            </div>
+                            </a>
                         </div>
                     </div>
             </div>
         )
     }
 }
+
+function mapStateToProps(state) {
+    return state
+}
+
+export default connect(mapStateToProps, { search })(HomeMain)
