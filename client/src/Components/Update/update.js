@@ -26,7 +26,7 @@ export default class Update extends Component {
     }
 
     submit() {
-        axios.put(`/api/property/:${this.state.property_id}`, this.state)
+        axios.put(__dirname + `/api/property/:${this.state.property_id}`, this.state)
     }
     render() {
         return (
