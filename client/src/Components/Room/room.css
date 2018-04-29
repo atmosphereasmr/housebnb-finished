@@ -11,6 +11,7 @@
     align-items: center;
     flex-flow: column;
     margin-top: 10px;
+    animation: fade-in 0.25s forwards;
 }
 
 .room-header-top {
@@ -225,6 +226,14 @@
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 15px;
     color: #484848;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.night-box:hover {
+    background-color: #484848;
+    color: white;
+    transition: 0.25s;
 }
 
 .rent-button-container {
@@ -658,4 +667,9 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+}
+
+@keyframes fade-in {
+    0% {opacity: 0}
+    100% {opacity: 1}
 }

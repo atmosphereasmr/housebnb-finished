@@ -69,6 +69,7 @@
     background-repeat: no-repeat;
     background-position-y: -550px;
     margin-top: 10px;
+    animation: fade-in 0.25s forwards;
 }
 
 .header-search-container {
@@ -361,4 +362,9 @@ textarea:focus, input:focus{
     height: 1px;
     background-color: #D3D3D3;
     margin: auto;
+}
+
+@keyframes fade-in {
+    0% {opacity: 0}
+    100% {opacity: 1}
 }

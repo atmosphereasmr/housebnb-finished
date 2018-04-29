@@ -47,7 +47,7 @@ class Header extends Component {
             <div>
                 <div className="help-menu-off" id="help-menu">
                     <div className="help-menu-header">
-                        <div className="help-menu-title">Airbnb Help</div>
+                        <div className="help-menu-title">Housebnb Help</div>
                         <div className="help-menu-title" onClick={() => this.helpClose()}>X</div>
                     </div>
                     <div className="help-input-container">
@@ -71,7 +71,7 @@ class Header extends Component {
                     <div>➡</div>
                     </div>
                     <div className="suggested-article">
-                    <div className="article-title">How does Airbnb handle security deposits?</div>
+                    <div className="article-title">How does Housebnb handle security deposits?</div>
                     <div>➡</div>
                     </div>
                     <div className="suggested-article">

@@ -57,7 +57,6 @@ export default class Login extends Component {
                         <input
                           name="username"
                           className="register-input"
-                          value={this.state.userData.username}
                           placeholder="Username"
                           onChange={this.handleChange}
                           />
@@ -67,7 +66,6 @@ export default class Login extends Component {
                         <input
                           name="password"
                           className="register-input"
-                          value={this.state.userData.password}
                           placeholder="Password"
                           onChange={this.handleChange}
                           />

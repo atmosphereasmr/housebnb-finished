@@ -18,7 +18,8 @@ export default class Room extends Component {
             size: "600x600",
             street: "",
             city: "",
-            state: ""
+            state: "",
+            hostName: ""
         }
         this.scroller = this.scroller.bind(this)
     }
@@ -41,7 +42,13 @@ export default class Room extends Component {
         this.scroller()
         this.getLat()
     })
-    }
+    axios.get(`/api/user/${this.props.match.params.id}`, { withCredentials: true })
+    .then((res) => {
+          this.setState({ hostName: res.data[0].first_name })
+    })
+}
+
+
 
     getLat() {
         var HttpClient = function () {
@@ -108,7 +115,6 @@ export default class Room extends Component {
             <div>
                 <ScrollListener
                     onScroll={value => this.setState({ scrollPosition: value }, () => {
-                        //console.log(this.state)
                     })}
                 />
               <div className="room-header-container" id="room-header" style={{ backgroundImage: `url("${this.state.property[0].image_med}")` }}>
@@ -156,7 +162,7 @@ export default class Room extends Component {
                                         <div className="host-text-container">
                                           <Link to= {`/host/${this.state.property[0].property_user}`} >
                                             <div className="host-text">
-                                                <div>Logan, Your Host</div>
+                                                <div>{this.state.hostName}, Your Host</div>
                                             </div>
                                           </Link>
                                         </div>
@@ -182,31 +188,6 @@ export default class Room extends Component {
                                 </div>
 
                             </div>
-                            {/**<div className="housebnb-ad-container">
-                                <div className="ad-inner-container">
-                                    <div className="ad-inner-text-container">
-                                        <div className="ad-header">
-                                            <div className="ad-logo" />
-                                            <div className="ad-plus">
-                                                <div>Plus</div>
-                                            </div>
-
-                                        </div>
-                                        <div className="ad-subheader">
-                                            <div>A selection of homes verified for quality & comfort</div>
-                                        </div>
-                                        <div className="ad-body">
-                                            <div>Every home in Airbnb Plus must pass an in-person quality inspection to ensure it meets high standards of comfort, quality, and style.</div>
-                                        </div>
-                                        <div className="ad-footer">
-                                            <div>Learn more</div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div> **/}
-
                         </div>
                         <div className="room-map-container">
                             <div className="room-map-header">
@@ -216,19 +197,6 @@ export default class Room extends Component {
                                 <div className="location-subtext">
                                     <div>{this.state.property[0].city}, {this.state.property[0].state}, {this.state.property[0].country}</div>
                                 </div>
-                                {/**<div className="location-body-container">
-                                    <div className="location-body-left">
-                                        <div>West Los Angeles is very walkable. The home is in a single family neighborhood There are grocery stores and restaurants within a mile of the house, and Santa Monica pier and beach are nearby. Plenty of free street parking within a block of the house.</div>
-                                    </div>
-                                    <div className="location-body-right-container">
-                                        <div className="location-body-right-header">
-                                            <div>Distance from Los Angeles International Airport</div>
-                                        </div>
-                                        <div className="location-body-right-body">
-                                            <div>13 mins by car without traffic</div>
-                                        </div>
-                                    </div>
-                                </div>**/}
                             </div>
                             <img id="map" src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.lat},${this.state.long}&zoom=13&size=${this.state.size}&maptype=roadmap&markers=color:green%7Clabel:G%7C${this.state.lat},${this.state.long}&key=AIzaSyAVpnn99NumKKO-dn2bvgA6PC4fDFB3pTs`} />
                             <div className="room-map-footer" />

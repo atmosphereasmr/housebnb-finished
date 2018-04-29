@@ -120,8 +120,6 @@ class SearchCondos extends Component {
                         <img src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.lat},${this.state.long}&zoom=13&size=${this.state.size}&maptype=roadmap
                         &markers=color:green%7Clabel:G%7C${this.state.lat},${this.state.long}&key=AIzaSyAVpnn99NumKKO-dn2bvgA6PC4fDFB3pTs
                         &markers=color:green%7Clabel:G%7C41.242075,-111.947893&key=AIzaSyAVpnn99NumKKO-dn2bvgA6PC4fDFB3pTs`} />
-                        <input onChange={(event) => this.addressInput(event.target.value)}></input>
-                        <button onClick={() => this.getLat()}>Button</button>
                     </div>
                 </div>
                 <div className="search-condos-footer-container">Enter dates to see full pricing. Additional fees apply. Taxes may be added.</div>
