@@ -32,6 +32,14 @@ module.exports = {
     .catch(error => console.log(error))
   },
 
+  pick: (req, res, next) => {
+    const dbInstance = req.app.get('db');
+
+    dbInstance.properties.pick()
+    .then(response => res.status(200).send(response))
+    .catch(error => console.log(error))
+  },
+
 
 
   // Add Property

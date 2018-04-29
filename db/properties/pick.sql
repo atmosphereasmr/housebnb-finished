@@ -1,0 +1,1 @@
+SELECT * FROM properties ORDER BY property_id DESC LIMIT 1;

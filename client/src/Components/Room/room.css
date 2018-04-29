@@ -10,6 +10,7 @@
     justify-content: space-between;
     align-items: center;
     flex-flow: column;
+    margin-top: 10px;
 }
 
 .room-header-top {
@@ -33,6 +34,13 @@
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 16px;
     cursor: pointer;
+    transition: 0.25s;
+}
+
+.room-header-top-box:hover {
+    background-color: #FF5A5F;
+    color: white;
+    transition: 0.25s;
 }
 
 .room-header-bottom-box {
@@ -48,6 +56,13 @@
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 16px;
     cursor: pointer;
+    transition: 0.25s;
+}
+
+.room-header-bottom-box:hover {
+    background-color: #FF5A5F;
+    color: white;
+    transition: 0.25s;
 }
 
 .room-header-bottom {
@@ -231,6 +246,16 @@
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 20px;
     color: white;
+    cursor: pointer;
+    transition: 0.25s;
+    border: 2px solid white;
+}
+
+.rent-button:hover {
+    background-color: white;
+    border: 2px solid #FF5A5F;
+    transition: 0.25s;
+    color: #FF5A5F;
 }
 
 .room-main-container {
@@ -377,11 +402,68 @@
     cursor: pointer;
 }
 
-.tour-pic {
+.tour-pic1 {
     width: 24%;
     height: 47%;
     background-size: cover;
+    background-position: center;
     background-image: url('https://images.unsplash.com/photo-1493150134366-cacb0bdc03fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d98494c50eba8a4b8ccb965288cfa490&auto=format&fit=crop&w=1350&q=80');
+}
+
+.tour-pic2 {
+    width: 24%;
+    height: 47%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://images.unsplash.com/photo-1520267213273-a4f859d4e88a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=124a7c75a5119a1a59f9c5638bc05af4&auto=format&fit=crop&w=1350&q=80');
+}
+
+.tour-pic3 {
+    width: 24%;
+    height: 47%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://images.unsplash.com/photo-1488805990569-3c9e1d76d51c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=52ab20c13e8729e918954bede90d8d8a&auto=format&fit=crop&w=1350&q=80');
+}
+
+.tour-pic4 {
+    width: 24%;
+    height: 47%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://images.unsplash.com/photo-1484101403633-562f891dc89a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8a3b12d469f015fa722a3e564a290466&auto=format&fit=crop&w=1353&q=80');
+}
+
+.tour-pic5 {
+    width: 24%;
+    height: 47%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://images.unsplash.com/photo-1484061263732-b8b0a5ae7db6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7f4409f71f2037177b81722609b2b318&auto=format&fit=crop&w=1350&q=80');
+}
+
+.tour-pic6 {
+    width: 24%;
+    height: 47%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://images.unsplash.com/photo-1518136247453-74e7b5265980?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=34d312abe67f954c279f1f244ce73963&auto=format&fit=crop&w=1350&q=80');
+}
+
+.tour-pic7 {
+    width: 24%;
+    height: 47%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://images.unsplash.com/photo-1463797221720-6b07e6426c24?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3c8c144e8e71f0226b0f87f157ba468a&auto=format&fit=crop&w=1351&q=80');
+}
+
+.tour-pic8 {
+    width: 24%;
+    height: 47%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://images.unsplash.com/photo-1484061332158-4f5335f3c503?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a65419e3df27f56aa069d2eac0f07aa6&auto=format&fit=crop&w=1342&q=80');
 }
 
 .housebnb-ad-container {
@@ -481,12 +563,12 @@
 
 .room-map-header {
     width: 90%;
-    height: 300px;
+    height: 100px;
 }
 
 .room-map-container {
     width: 100%;
-    height: 1000px;
+    height: 800px;
     display: flex;
     justify-content: flex-start;
     align-items: center;

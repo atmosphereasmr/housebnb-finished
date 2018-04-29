@@ -13,7 +13,7 @@ app.use(express.static(__dirname + '/client/build'));
 app.use(bodyParser.json());
 
 // app.use(cors({
-//   origin: 'http://localhost:3000',
+//   origin: true,
 //   credentials: true
 // }));
 
@@ -53,9 +53,10 @@ app.get('/api/user/homes/:userId', ctrlUsers.getUserHomes)
 app.put('/api/user/update/:userId', isLoggedIn, ctrlUsers.updateUser)
 
 app.get('/api/home', ctrlProperties.getPropertyHome)
+app.get('/api/pick', ctrlProperties.pick)
 app.get('/api/search/:query', ctrlProperties.getPropertySearch)
 app.get('/api/property/:propertyId', ctrlProperties.getProperty)
-app.post('/api/add', isLoggedIn, ctrlProperties.addProperty)
+app.post('/api/add', ctrlProperties.addProperty)
 app.put('/api/property/:propertyId/update', isLoggedIn, ctrlProperties.updateProperty)
 app.delete('/api/delete/:propertyId', isLoggedIn, ctrlProperties.deleteProperty)
 

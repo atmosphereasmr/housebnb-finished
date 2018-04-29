@@ -24,7 +24,7 @@ class HomeMain extends Component {
                         <div className="header-search-container">
                             <div className="glass-icon" />
                             <input placeholder='Try "Salt Lake City"' onChange={(e) => this.setState({search_query: e.target.value})}></input>
-                            <Link className="search-box" to={`/search-condos/${this.state.search_query}`} ></Link>
+                            <Link className="search-box" to={`/search-condos/${this.state.search_query}`} >Search</Link>
                         </div>
                     </div>
             </div>

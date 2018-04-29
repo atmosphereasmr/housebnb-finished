@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import '../Host/host.css'
+import { connect } from "react-redux";
+import { getID } from '../../reducer'
 
-export default class Host extends Component {
+class Host extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -27,7 +29,14 @@ export default class Host extends Component {
          })
        })
 
+       this.props.getID(this.props.match.params.id)
 
+
+
+  }
+
+  componentWillReceiveProps(props) {
+      console.log(333, props)
   }
 
 
@@ -40,8 +49,8 @@ export default class Host extends Component {
 
                         </div>
 
-                        <div className="button">
-                            <Link to="/create">Add Property</Link>
+                        <div className="button" onClick={() => this.props.history.push(`/create/:${this.props.userID}`)}>
+                            <Link to={`/create/:${this.props.userID}`}>Add Property</Link>
                         </div>
 
 
@@ -156,3 +165,11 @@ export default class Host extends Component {
         )
     }
 }
+
+function mapStateToProps(state) {
+    return (
+        state
+    )
+}
+
+export default connect(mapStateToProps, {getID})(Host)

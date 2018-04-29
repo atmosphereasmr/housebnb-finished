@@ -12,10 +12,13 @@ export default class Room extends Component {
             property: [],
             scrollPosition: 0,
             hover: '',
-            // address: 'California',
-            // lat: "41.223",
-            // long: "-111.9738304",
-            size: "600x600"
+            address: 'California',
+            lat: "",
+            long: "",
+            size: "600x600",
+            street: "",
+            city: "",
+            state: ""
         }
         this.scroller = this.scroller.bind(this)
     }
@@ -25,30 +28,45 @@ export default class Room extends Component {
       .then(res => {
         this.setState({
           property: res.data,
+          street: res.data[0].street,
+          city: res.data[0].city,
+          state: res.data[0].state
         })
         const roomSearch = document.getElementById('room-search-bar')
         roomSearch.className = "room-search-bar-on"
         this.scroller()
-
-        const pic2 = document.getElementById('pic-2')
-        const pic3 = document.getElementById('pic-3')
-        const pic4 = document.getElementById('pic-4')
-        const pic5 = document.getElementById('pic-5')
-        const pic6 = document.getElementById('pic-6')
-        const pic7 = document.getElementById('pic-7')
-        const pic8 = document.getElementById('pic-8')
-
-        pic2.style = "background-image: url('https://images.unsplash.com/photo-1480434935263-07efee66f5b7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b274c9b9f4ff75ac33119c2fb9c35e65&auto=format&fit=crop&w=1350&q=80')"
-        pic3.style = "background-image: url('https://images.unsplash.com/photo-1455831843141-7279e47411f7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=89c04c9933fe65feab286f226e845134&auto=format&fit=crop&w=1350&q=80')"
-        pic4.style = "background-image: url('https://images.unsplash.com/photo-1499955085172-a104c9463ece?ixlib=rb-0.3.5&s=00991cd2db7692320d8625fe09391e87&auto=format&fit=crop&w=1350&q=80')"
-        pic5.style = "background-image: url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-0.3.5&s=18443ea3849d7542c4a93de0a29d36c8&auto=format&fit=crop&w=1350&q=80')"
-        pic6.style = "background-image: url('https://images.unsplash.com/photo-1484061263732-b8b0a5ae7db6?ixlib=rb-0.3.5&s=e4d68bc0bda14a8a8ac389686645bfaf&auto=format&fit=crop&w=1350&q=80')"
-        pic7.style = "background-image: url('https://images.unsplash.com/photo-1496664444929-8c75efb9546f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a3a5e87267175e106954c7e76bd968b9&auto=format&fit=crop&w=1350&q=80')"
-        pic8.style = "background-image: url('https://images.unsplash.com/photo-1463797221720-6b07e6426c24?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3c8c144e8e71f0226b0f87f157ba468a&auto=format&fit=crop&w=1351&q=80')"
       }
     ).catch(error => console.log(error))
-
+    .then( () => {
+        this.scroller()
+        this.getLat()
+    })
     }
+
+    getLat() {
+        var HttpClient = function () {
+            this.get = function (aUrl, aCallback) {
+                var anHttpRequest = new XMLHttpRequest();
+                anHttpRequest.onreadystatechange = function () {
+                    if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                        aCallback(anHttpRequest.responseText)
+                } 
+
+
+
+                anHttpRequest.open("GET", aUrl, true);
+                anHttpRequest.send(null);
+            }
+        }
+
+        var client = new HttpClient();
+        client.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.state.street}+${this.state.city}+${this.state.state}&key=AIzaSyAgIZ-A0dS_YP6vEoa7C3To4go4jlAhJ_g`, (response) => {
+            response = JSON.parse(response)
+            this.setState({ lat: response.results[0].geometry.location.lat, long: response.results[0].geometry.location.lng }, () => console.log(this.state))
+        })
+    }
+
+
 
 
 
@@ -57,10 +75,16 @@ export default class Room extends Component {
         window.onscroll = () => {
             if (this.state.scrollPosition > 800) {
                 const rentBox = document.getElementById('rent-box')
+                if (rentBox === null) {
+                } else {  
                 rentBox.className = "rent-box-fixed"
+                }
             } else if (this.state.scrollPosition < 800) {
                 const rentBox = document.getElementById('rent-box')
+                if (rentBox === null) {
+                } else {
                 rentBox.className = "rent-box"
+                }
             }
         }
     }
@@ -143,14 +167,14 @@ export default class Room extends Component {
                                         <div>Tour this home</div>
                                     </div>
                                     <div className="tour-pics-container">
-                                        <div className="tour-pic" id="pic-1"></div>
-                                        <div className="tour-pic" id="pic-2"></div>
-                                        <div className="tour-pic" id="pic-3"></div>
-                                        <div className="tour-pic" id="pic-4"></div>
-                                        <div className="tour-pic" id="pic-5"></div>
-                                        <div className="tour-pic" id="pic-6"></div>
-                                        <div className="tour-pic" id="pic-7"></div>
-                                        <div className="tour-pic" id="pic-8"></div>
+                                        <div className="tour-pic1"></div>
+                                        <div className="tour-pic2"></div>
+                                        <div className="tour-pic3"></div>
+                                        <div className="tour-pic4"></div>
+                                        <div className="tour-pic5"></div>
+                                        <div className="tour-pic6"></div>
+                                        <div className="tour-pic7"></div>
+                                        <div className="tour-pic8"></div>
                                     </div>
                                     <div className="tour-footer">
                                         <div className="tour-text">See all (11) pics</div>
@@ -206,7 +230,7 @@ export default class Room extends Component {
                                     </div>
                                 </div>**/}
                             </div>
-                            <img id="map" src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.property[0].lattitude},${this.state.property[0].longitude}&zoom=13&size=${this.state.size}&maptype=roadmap&markers=color:green%7Clabel:G%7C${this.state.property[0].lattitude},${this.state.property[0].longitude}&key=AIzaSyAVpnn99NumKKO-dn2bvgA6PC4fDFB3pTs`} />
+                            <img id="map" src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.lat},${this.state.long}&zoom=13&size=${this.state.size}&maptype=roadmap&markers=color:green%7Clabel:G%7C${this.state.lat},${this.state.long}&key=AIzaSyAVpnn99NumKKO-dn2bvgA6PC4fDFB3pTs`} />
                             <div className="room-map-footer" />
                         </div>
                     </div>

@@ -19,7 +19,6 @@
 .explore-condo-container {
     width: 21%;
     height: 100%;
-    background-color: lawngreen;
     display: flex;
     justify-content: flex-start;
     align-items: center;

@@ -6,6 +6,18 @@ import { search } from '../../reducer'
 
 class Header extends Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            userID: ""
+        }
+    }
+
+    componentWillReceiveProps(props) {
+        console.log(99999, props)
+        this.setState({userID: props.userID})
+    }
+
     componentDidMount() {
     }
 
@@ -103,7 +115,7 @@ class Header extends Component {
                                     <div className="become-host-menu">Host an experience</div>
                                 </div>
                             </div> **/}
-                            <Link to={`/host/`} >
+                            <Link to={`/host/${this.state.userID}`} >
                               <div className="header-menu-item">
                                   <p>Profile</p>
                               </div>

@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import axios from "axios"
+import { connect } from "react-redux";
 import './create.css'
 
-export default class Create extends Component {
+class Create extends Component {
+
+
 
     constructor(props) {
         super(props)
@@ -24,8 +27,22 @@ export default class Create extends Component {
         }
     }
 
+    componentDidMount() {
+
+        const a = this.props.match.params.id
+        console.log('YES', a)
+        const b = a.substring(a.indexOf(":")+1);
+
+        this.setState({property_user: b}, () => console.log(this.state))
+    }
+
     submit() {
-        axios.post('/api/add', {withCredentials: true}, this.state)
+        axios.post('/api/add', this.state)
+        .then(res =>
+        axios.get('/api/pick').then(res => {
+            const newHome = res.data[0].property_id
+            this.props.history.push(`/room/${newHome}`)
+        }))
     }
 
     render() {
@@ -90,9 +107,7 @@ export default class Create extends Component {
                         </div>
                         <div className="create-button-container">
                             <div className="create-button">
-                                <div onClick={(
-
-                                ) => this.submit()}>Submit</div>
+                                <div onClick={() => this.submit()}>Submit</div>
                             </div>
                         </div>
 
@@ -108,3 +123,11 @@ export default class Create extends Component {
         )
     }
 }
+
+function mapStateToProps(state) {
+    return (
+        state
+    )
+}
+
+export default connect(mapStateToProps)(Create)

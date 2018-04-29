@@ -11,7 +11,7 @@ class SearchCondos extends Component {
         super(props)
         this.state = {
             hover: '',
-            address: 'California',
+            address: 'Salt Lake City',
             lat: "40.761806",
             long: "-111.890534",
             size: "600x600",
@@ -30,8 +30,13 @@ class SearchCondos extends Component {
 
         axios.get(`/api/search/${this.props.match.params.query}`, {widthCredentials: true})
             .then(res => {
+
+
                 this.setState({
                     searchResults: res.data,
+                    street: res.data[0].city || '341 Main Street',
+                    city: res.data[0].city || 'Salt Lake City',
+                    state: res.data[0].state || 'Utah'
                 }, console.log(4444, this.state))
 
                 const footer1 = document.getElementById('footer-1')
@@ -39,7 +44,9 @@ class SearchCondos extends Component {
                 footer1.style = "display: none;"
                 footer2.style = "display: none;"
 
-            })
+            }).then( () =>
+                this.getLat()
+            )
     }
 
     addressInput(e) {
@@ -52,8 +59,10 @@ class SearchCondos extends Component {
                 var anHttpRequest = new XMLHttpRequest();
                 anHttpRequest.onreadystatechange = function () {
                     if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
-                        aCallback(anHttpRequest.responseText);
-                }
+                        aCallback(anHttpRequest.responseText)
+                } 
+
+
 
                 anHttpRequest.open("GET", aUrl, true);
                 anHttpRequest.send(null);
@@ -61,7 +70,7 @@ class SearchCondos extends Component {
         }
 
         var client = new HttpClient();
-        client.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.state.address}&key=AIzaSyAgIZ-A0dS_YP6vEoa7C3To4go4jlAhJ_g`, (response) => {
+        client.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.state.street}+${this.state.city}+${this.state.state}&key=AIzaSyAgIZ-A0dS_YP6vEoa7C3To4go4jlAhJ_g`, (response) => {
             response = JSON.parse(response)
             this.setState({ lat: response.results[0].geometry.location.lat, long: response.results[0].geometry.location.lng }, () => console.log(this.state))
         })

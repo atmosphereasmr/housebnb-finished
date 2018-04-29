@@ -22,7 +22,7 @@
 .housebnb-logo {
     width: 5%;
     height: 80%;
-    background-image: url('http://lh3.googleusercontent.com/BQnvuZR500pg2ulvv3FBmRI93ODz3AjNfbz92hCieuJLvmbGY36AKhETMTTfTDgpPQI');
+    background-image: url('https://image.ibb.co/fBmweH/housebnb.jpg');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -63,6 +63,12 @@
     height: 500px;
     font-family: 'Roboto Condensed', sans-serif;
     margin: auto;
+    background-image: url('https://image.ibb.co/nAiOtc/image.jpg');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-position-y: -550px;
+    margin-top: 10px;
 }
 
 .header-search-container {
@@ -140,6 +146,15 @@ textarea:focus, input:focus{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    border: 2px solid white;
+    transition: 0.25s;
+}
+
+.search-box:hover {
+    background-color: white;
+    border: 2px solid #FF5A5F;
+    color: #FF5A5F;
+    transition: 0.25s;
 }
 
 .condos-search-bar {

@@ -16,7 +16,7 @@ export default (
     <Route component={SearchCondos} path="/search-condos/:query"/>
     <Route component={Room} path="/room/:id"/>
     <Route component={Host} path="/host/:id"/>
-    <Route component={Create} path="/create"/>
+    <Route component={Create} path="/create/:id"/>
     <Route component={Update} path="/update"/>
     <Route component={Register} path="/register"/>
     <Route component={Login} path="/login"/>
