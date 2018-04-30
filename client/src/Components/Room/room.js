@@ -25,13 +25,15 @@ export default class Room extends Component {
     }
 
     componentDidMount() {
-      axios.get(`/api/property/${this.props.match.params.id}`, { withCredentials: true })
+      axios.get(`http://localhost:3001/api/property/${this.props.match.params.id}`, { withCredentials: true })
       .then(res => {
+          console.log(3333, res)
         this.setState({
           property: res.data,
           street: res.data[0].street,
           city: res.data[0].city,
-          state: res.data[0].state
+          state: res.data[0].state,
+          hostID: res.data[0].property_user
         })
         const roomSearch = document.getElementById('room-search-bar')
         roomSearch.className = "room-search-bar-on"
@@ -41,11 +43,12 @@ export default class Room extends Component {
     .then( () => {
         this.scroller()
         this.getLat()
-    })
-    axios.get(`/api/user/${this.props.match.params.id}`, { withCredentials: true })
+    }).then( () =>
+    axios.get(`http://localhost:3001/api/user/${this.state.hostID}`, { withCredentials: true })
     .then((res) => {
+        console.log(66666, res)
           this.setState({ hostName: res.data[0].first_name })
-    })
+    }))
 }
 
 
