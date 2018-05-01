@@ -12,10 +12,10 @@ const app = express();
 app.use(express.static(__dirname + '/client/build'));
 app.use(bodyParser.json());
 
-app.use(cors({
-  origin: true,
-  credentials: true
-}));
+// app.use(cors({
+//   origin: true,
+//   credentials: true
+// }));
 
 app.use(
   session({

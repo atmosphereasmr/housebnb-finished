@@ -25,7 +25,7 @@ export default class Room extends Component {
     }
 
     componentDidMount() {
-      axios.get(`http://localhost:3001/api/property/${this.props.match.params.id}`, { withCredentials: true })
+      axios.get(`/api/property/${this.props.match.params.id}`, { withCredentials: true })
       .then(res => {
           console.log(3333, res)
         this.setState({
@@ -44,7 +44,7 @@ export default class Room extends Component {
         this.scroller()
         this.getLat()
     }).then( () =>
-    axios.get(`http://localhost:3001/api/user/${this.state.hostID}`, { withCredentials: true })
+    axios.get(`/api/user/${this.state.hostID}`, { withCredentials: true })
     .then((res) => {
         console.log(66666, res)
           this.setState({ hostName: res.data[0].first_name })
